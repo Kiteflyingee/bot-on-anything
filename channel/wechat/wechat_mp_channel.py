@@ -38,7 +38,7 @@ class WechatSubsribeAccount(Channel):
     def startup(self):
         logger.info('[WX_Public] Wechat Public account service start!')
         robot.config['PORT'] = channel_conf(const.WECHAT_MP).get('port')
-        robot.config['HOST'] = '0.0.0.0'
+        robot.config['HOST'] = '127.0.0.1'
         robot.run()
 
     def handle(self, msg, count=1):
