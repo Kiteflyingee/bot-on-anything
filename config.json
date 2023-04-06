@@ -40,7 +40,7 @@
 
     "wechat_mp": {
       "token": "fangbuwandefengzhen",
-      "port": "443"
+      "port": "80"
     },
 
     "gmail": {
