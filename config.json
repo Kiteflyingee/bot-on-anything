@@ -2,9 +2,9 @@
   "model": {
     "type" : "chatgpt",
     "openai": {
-      "api_key": "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",
+      "api_key": "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",
       "api_base": "",
-      "model": "gpt-4",
+      "model": "gpt-3.5-turbo",
       "proxy": "",
       "conversation_max_tokens": 1000,
       "temperature":0.75,
@@ -24,7 +24,7 @@
     }
   },
   "channel": {
-    "type": ["wechat_mp"],
+    "type": ["http"],
     "single_chat_prefix": ["bot", "@bot"],
     "single_chat_reply_prefix": "[bot] ",
     "group_chat_prefix": ["@bot"],
@@ -62,7 +62,7 @@
       "image_create_prefix": ["画", "draw", "Draw"],
       "http_auth_secret_key": "6d25a684-9558-11e9-aa94-efccd7a0659b",
       "http_auth_password": "6.67428e-11",
-      "port": "80"
+      "port": "443"
     },
 
     "dingtalk": {
