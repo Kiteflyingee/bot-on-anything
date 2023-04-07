@@ -2,7 +2,7 @@
   "model": {
     "type" : "chatgpt",
     "openai": {
-      "api_key": "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",
+      "api_key": "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",
       "api_base": "",
       "model": "gpt-3.5-turbo",
       "proxy": "",
@@ -61,7 +61,7 @@
     "http": {
       "image_create_prefix": ["画", "draw", "Draw"],
       "http_auth_secret_key": "6d25a684-9558-11e9-aa94-efccd7a0659b",
-      "http_auth_password": "6.67428e-11",
+      "http_auth_password": "123456",
       "port": "443"
     },
 
