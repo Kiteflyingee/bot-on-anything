@@ -1,5 +1,5 @@
 # encoding:utf-8
-
+import os
 from model.model import Model
 from config import model_conf, common_conf_val
 from common import const
@@ -12,7 +12,7 @@ user_session = dict()
 # OpenAI对话模型API (可用)
 class ChatGPTModel(Model):
     def __init__(self):
-        openai.api_key = model_conf(const.OPEN_AI).get('api_key')
+        openai.api_key = os.environ['api_key']
         api_base = model_conf(const.OPEN_AI).get('api_base')
         if api_base:
             openai.api_base = api_base
