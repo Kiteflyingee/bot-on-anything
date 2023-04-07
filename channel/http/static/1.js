@@ -29,11 +29,15 @@ ConvState.prototype.printAnswer = function (uuid, answer = '我是ChatGPT, 一�
         messageObj.before(emoji);
         messageObj.html(answer);
         messageObj.removeClass('typing').addClass('ready');
-        this.scrollDown();
+        // 触发自定义事件
+        $(document).trigger('newMessageAdded');
         $(this.wrapper).find(this.parameters.inputIdHashTagName).focus();
     }.bind(this), 500);
 };
-
+// 监听自定义事件，在事件处理函数中滚动页面到最底部
+$(document).on('newMessageAdded', function() {
+  $('html, body').animate({scrollTop: $(document).height()}, 'fast');
+});
 ConvState.prototype.updateAnswer = function (question, uuid) {
     setTimeout(function () {
         var socket = io('/chat');
