@@ -103,7 +103,7 @@ def login():
                 response.set_cookie(key='Authorization', value=token)
                 return response
         else:
-            return render_template('login.html')
+            return render_template('login_new.html')
     response.headers.set('location', './login?err=登录失败')
     return response
 

@@ -25,6 +25,8 @@ ConvState.prototype.printAnswer = function (uuid, answer = '我是ChatGPT, 一�
     setTimeout(function () {
         var messageObj = $(this.wrapper).find(`#${uuid}`);
         answer = marked.parse(answer);
+        var emoji = $(`<div class="avatar">\ud83e\udd16</div>`); // 创建头像元素
+        messageObj.before(emoji);
         messageObj.html(answer);
         messageObj.removeClass('typing').addClass('ready');
         this.scrollDown();
@@ -123,7 +125,7 @@ ConvState.prototype.sendMessage = function (msg) {
             typeInputUi: 'textarea',
             formIdName: 'convForm',
             inputIdName: 'userInput',
-            buttonText: '▶'
+            buttonText: '发送'
         });
 
         //hides original form so users cant interact with it
