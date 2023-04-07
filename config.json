@@ -2,7 +2,7 @@
   "model": {
     "type" : "chatgpt",
     "openai": {
-      "api_key": "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",
+      "api_key": "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",
       "api_base": "",
       "model": "gpt-3.5-turbo",
       "proxy": "",
