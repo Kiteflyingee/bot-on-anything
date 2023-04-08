@@ -25,7 +25,7 @@ ConvState.prototype.printAnswer = function (uuid, answer = '我是ChatGPT, 一�
     setTimeout(function () {
         var messageObj = $(this.wrapper).find(`#${uuid}`);
         answer = marked.parse(answer);
-        var emoji = $(`<div class="avatar">\ud83e\udd16</div>`); // 创建头像元素
+        var emoji = $(`<div class="avatar"><img src="./static/logo.jpeg" style="height:35px; width:35px"></div>`); // 创建头像元素
         messageObj.before(emoji);
         messageObj.html(answer);
         messageObj.removeClass('typing').addClass('ready');
@@ -69,6 +69,7 @@ ConvState.prototype.updateAnswer = function (question, uuid) {
             // 接收到消息时重置计时器
             resetTimer();
             if (msg.result)
+                console.log(msg.result)
                 messageObj.html(msg.result + `<div class="typing_loader"></div></div>`);
             this.scrollDown();
         });
@@ -85,6 +86,7 @@ ConvState.prototype.updateAnswer = function (question, uuid) {
     }.bind(this), 1000);
 };
 ConvState.prototype.sendMessage = function (msg) {
+    msg = marked.parse(msg);
     var message = $('<div class="message from">' + msg + '</div>');
     $('button.submit').removeClass('glow');
     $(this.wrapper).find(this.parameters.inputIdHashTagName).focus();
