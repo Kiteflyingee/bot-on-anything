@@ -95,7 +95,7 @@ ConvState.prototype.sendMessage = function (msg) {
         this.scrollDown();
     }.bind(this), 100);
     var uuid = generateUUID().toLowerCase();
-    var messageObj = $(`<div class="message to typing" id="${uuid}"><div class="typing_loader"></div></div>`);
+            var messageObj = $(`<div class="message to typing" id="${uuid}"><div class="pending svelte-6roggh"><div class="dot-flashing svelte-6roggh"></div>&nbsp;<div class="dot-flashing svelte-6roggh"></div>&nbsp;<div class="dot-flashing svelte-6roggh"></div></div></div>`);
     setTimeout(function () {
         $(this.wrapper).find('#messages').append(messageObj);
         this.scrollDown();
@@ -166,7 +166,7 @@ ConvState.prototype.sendMessage = function (msg) {
         //prints first contact
         $.when($('div.spinLoader').addClass('hidden')).done(function () {
             var uuid = generateUUID()
-            var messageObj = $(`<div class="message to typing" id="${uuid}"><div class="typing_loader"></div></div>`);
+            var messageObj = $(`<div class="message to typing" id="${uuid}"><div class="pending svelte-6roggh"><div class="dot-flashing svelte-6roggh"></div>&nbsp;<div class="dot-flashing svelte-6roggh"></div>&nbsp;<div class="dot-flashing svelte-6roggh"></div></div></div>`);
             $(state.wrapper).find('#messages').append(messageObj);
             state.scrollDown();
             state.printAnswer(uuid = uuid);
