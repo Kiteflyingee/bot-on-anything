@@ -11,6 +11,7 @@ const conversationType = {
     DISPOSABLE: 1,
     STREAM: 1 << 1
 }
+
 function ConvState(wrapper, form, params) {
     this.id = generateUUID()
     this.form = form;
@@ -28,7 +29,7 @@ ConvState.prototype.printAnswer = function (uuid, answer = '我是ChatGPT, 一�
         var emoji = $(`<div class="avatar"><img src="./static/logo.jpeg" style="height:35px; width:35px"></div>`); // 创建头像元素
         messageObj.before(emoji);
         messageObj.html(answer);
-        messageObj.removeClass('typing').addClass('ready');
+        messageObj.removeClass('typing').addClass('ready').addClass('markdown-body');
         // 触发自定义事件
         $(document).trigger('newMessageAdded');
         $(this.wrapper).find(this.parameters.inputIdHashTagName).focus();
