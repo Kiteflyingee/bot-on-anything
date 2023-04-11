@@ -130,3 +130,7 @@ p {
     /* align-self: center; */
     gap: 2px;
 }
+pre{
+    background-color: #fff;
+    font-size: 14px;
+}
